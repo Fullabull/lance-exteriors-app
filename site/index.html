@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lance Exteriors</title>
+  <meta name="description" content="Roof cleaning and care." />
+  <meta name="theme-color" content="#0F2417">
+  <link rel="stylesheet" href="css/site.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="shortcut icon" href="/favicon.ico">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="tone-badge" id="tone-header"></div>
+    <div class="wrap">
+
+      <div class="brand">
+        <!-- Main round logo (used on desktop/tablet and for palette design) -->
+        <img
+          id="paletteToggle"
+          class="brand-logo-main"
+          src="img/logo_nav.png"
+          alt=""
+          draggable="false"
+        />
+      
+        <!-- Compact curvy-text logo (only for very tight mobile) -->
+        <img
+          id="paletteToggleMobile"
+          class="brand-logo-mobile"
+          src="img/logo_nav_mobile.png"
+          alt="Lance Exteriors"
+          draggable="false"
+        />
+      
+        <div class="brand-text">
+          <span class="brand-name">Lance Exteriors</span>
+          <span class="brand-tagline">Roof Moss Removal &amp; Prevention</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburgerBtn">☰</button>
+    </div>
+  </header>
+
+  <!-- Palette Control (design-only) -->
+  <div id="paletteControl" class="palette-control">
+    <button data-target="all">All Sections</button>
+    <button data-target="header">Header / Footer</button>
+    <button data-target="hero">Hero</button>
+    <button data-target="services">Services</button>
+    <button data-target="reviews">Reviews</button>
+    <button data-target="contact">Contact</button>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="tone-badge" id="tone-hero"></div>
+      <div class="wrap">
+
+            <!-- Supra-hero rotating tagline -->
+            <p class="hero-supra-tagline">
+              <span id="heroTagline">Roof Cleaning &amp; Moss Control</span>
+            </p>
+
+            <h1>Make your home look new again.</h1>
+
+            <img
+              id="hero-photo"
+              class="hero-photo"
+              src="img/hero-01-desktop.png"
+              alt="Before and after roof moss removal"
+            />
+
+            <p>Roof cleaning, gutters, and exterior wash - done safely and professionally.</p>
+            <div class="cta">
+              <a class="btn" href="#contact">Get a Quote</a>
+              <a class="btn btn-ghost" href="tel:+1XXXXXXXXXX">Call</a>
+            </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="tone-badge" id="tone-services"></div>
+      <div class="wrap">
+        <h2>Services</h2>
+        <ul class="cards">
+          <li class="card">
+            <h3>Roof Cleaning</h3>
+            <p>Softwash where appropriate. Protects shingles and improves curb appeal.</p>
+          </li>
+          <li class="card">
+            <h3>Gutter Cleaning</h3>
+            <p>Clear, flush, and verify downspouts.</p>
+          </li>
+          <li class="card">
+            <h3>House Wash</h3>
+            <p>Siding wash for a clean, bright exterior.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="reviews" class="section alt">
+      <div class="tone-badge" id="tone-reviews"></div>
+      <div class="wrap">
+        <h2>Reviews</h2>
+        <p>Coming next: Google reviews or curated testimonials.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="tone-badge" id="tone-contact"></div>
+      <div class="wrap">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:hello@lanceexteriors.com">hello@lanceexteriors.com</a></p>
+        <p>Phone: <a href="tel:+1XXXXXXXXXX">+1 (XXX) XXX-XXXX</a></p>
+        <p>
+          <a class="btn" href="mailto:hello@lanceexteriors.com?subject=Quote%20Request">
+            Request a Quote
+          </a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <small>&copy; <span id="year"></span> Lance Exteriors</small>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+
+  <!-- Viewport diagnostics -->
+  <script>
+    (function () {
+      function setVw() {
+        var vv = window.visualViewport;
+        var cssW = vv ? vv.width : document.documentElement.clientWidth;
+        var cssH = vv ? vv.height : document.documentElement.clientHeight;
+
+        document.body.setAttribute("data-vw", Math.round(cssW) + "px");
+        document.body.setAttribute("data-vh", Math.round(cssH) + "px");
+        document.body.setAttribute("data-dpr", String(window.devicePixelRatio || 1));
+        document.body.setAttribute("data-sw", screen && screen.width ? String(screen.width) : "?");
+        document.body.setAttribute("data-sh", screen && screen.height ? String(screen.height) : "?");
+      }
+
+      setVw();
+
+      window.addEventListener("resize", setVw, { passive: true });
+      window.addEventListener("orientationchange", setVw, { passive: true });
+
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener("resize", setVw, { passive: true });
+        window.visualViewport.addEventListener("scroll", setVw, { passive: true });
+      }
+    })();
+  </script>
+  <script>
+      document.getElementById('hamburgerBtn').onclick = function () {
+            document.querySelector('.nav').classList.toggle('open');
+      };
+  </script>
+
+  <script>
+    const heroDesktop = [
+      "img/hero-03-desktop.jpg",
+      "img/hero-04-desktop.jpg",
+      "img/hero-05-desktop.jpg",
+      "img/hero-06-desktop.jpg",
+      "img/hero-01-desktop.png",
+      "img/hero-02-desktop.jpg"
+    ];
+  
+    const heroMobile = [
+      "img/hero-03-mobile.jpg",
+      "img/hero-04-mobile.jpg",
+      "img/hero-05-mobile.jpg",
+      "img/hero-06-mobile.jpg",
+      "img/hero-01-mobile.png",
+      "img/hero-02-mobile.jpg"
+    ];
+  
+    let heroIndex = 0;
+    const heroImg = document.getElementById("hero-photo");
+  
+    function pickSet() {
+      return window.innerWidth < 768 ? heroMobile : heroDesktop;
+    }
+  
+    // initial image
+    heroImg.src = pickSet()[0];
+  
+    function swapHero() {
+      const set = pickSet();
+  
+      heroImg.classList.add("is-fading");
+  
+      setTimeout(() => {
+        heroIndex = (heroIndex + 1) % set.length;
+        heroImg.src = set[heroIndex];
+        heroImg.classList.remove("is-fading");
+      }, 300);
+    }
+  
+    // autoplay
+    let timer = setInterval(swapHero, 7000);
+  
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(swapHero, 7000);
+    }
+  
+    // pause on hover
+    heroImg.addEventListener("mouseenter", () => {
+      clearInterval(timer);
+    });
+  
+    // resume after hover with full delay
+    heroImg.addEventListener("mouseleave", () => {
+      resetTimer();
+    });
+  
+    // ---- Mobile swipe support ----
+    let touchStartX = 0;
+    let touchEndX = 0;
+  
+    heroImg.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+  
+    heroImg.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
+  
+    function handleSwipe() {
+      const delta = touchEndX - touchStartX;
+  
+      if (Math.abs(delta) < 50) return;
+  
+      const set = pickSet();
+  
+      if (delta < 0) {
+        // left swipe → next image
+        swapHero();
+        resetTimer();
+      } else {
+        // right swipe → previous image
+        heroIndex = (heroIndex - 1 + set.length) % set.length;
+        heroImg.src = set[heroIndex];
+        resetTimer();
+      }
+    }
+  
+    // keep current image in sync on resize
+    window.addEventListener("resize", () => {
+      const set = pickSet();
+      heroImg.src = set[heroIndex];
+    });
+  </script>
+
+<div id="paletteIndexOverlay"></div>
+</body>
+</html>

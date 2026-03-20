@@ -1,0 +1,20 @@
+{
+  "designMode": false,
+  "activeFamilyIndex": 4,
+  "globalIndex": 0,
+  "absTone": {
+    "header": 33,
+    "hero": 42,
+    "services": 40,
+    "reviews": 40,
+    "contact": 40
+  },
+  "textColors": {
+    "header": "#F1F1F1",
+    "hero": "#F1F1F1",
+    "services": "#F1F1F1",
+    "reviews": "#F1F1F1",
+    "contact": "#F1F1F1"
+  },
+  "lastTextHex": "#F1F1F1"
+}
