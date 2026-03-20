@@ -1,0 +1,397 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+body.design-mode .site-header {
+  outline: 2px dashed rgba(0,0,0,0.25);
+  outline-offset: -2px;
+}
+
+.wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* =========================
+   Header / Nav
+========================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  color: #111; /* base text color, overridden by JS inline color */
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 56px;
+}
+
+/* Brand lockup */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Round dude logo (desktop/tablet) */
+.brand-logo-main {
+  height: 64px;   /* fixed */
+  width: auto;
+  display: block;
+  padding: 4px 0px;
+}
+
+/* Curvy text logo (tiny mobile) */
+.brand-logo-mobile {
+  height: 80px;   /* let the image breathe */
+  width: auto;
+  display: none;  /* hidden by default */
+  padding: 4px 0px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+
+.brand-tagline {
+  font-weight: 500;
+  font-size: 0.85rem;
+  opacity: 0.75;
+  white-space: nowrap;
+}
+
+/* Two logo roles: main vs mobile wordmark */
+.brand-logo-mobile {
+  display: none;  /* hidden on desktop */
+}
+
+.brand-logo-main {
+  display: block; /* shown on desktop */
+}
+
+.nav a {
+  margin-left: 16px;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.nav a,
+.nav a:hover {
+      color: inherit;
+      }
+
+/* =========================
+   Hero
+========================= */
+
+.hero {
+  padding: 06px 0px 56px;
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: 36px;
+}
+
+.hero p {
+  margin: 0 0 16px;
+  max-width: 52ch;
+}
+
+.hero-supra-tagline {
+  margin: 2px 0 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.hero-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.hero-photo.is-fading {
+  opacity: 0;
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border: 1px solid currentColor;
+  text-decoration: none;
+  color: inherit;       /* follow section text color */
+  margin-right: 10px;
+}
+
+.btn-ghost {
+  border-color: currentColor;
+  color: inherit;       /* follow section text color */
+}
+
+/* =========================
+   Sections
+========================= */
+
+.site-header,
+.hero,
+.section {
+  position: relative;
+}
+
+.section {
+  padding: 40px 0;
+  border-top: 1px solid #eee;
+}
+
+.section.alt {
+  background: #f7f7f7;
+}
+
+/* Cards */
+.cards {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 14px;
+  background: #fff;
+}
+
+.card h3 {
+  margin: 0 0 6px;
+}
+
+/* =========================
+   Footer
+========================= */
+
+.site-footer {
+  border-top: 1px solid #eee;
+  padding: 20px 0;
+}
+
+/* =========================
+   Palette Control (design-only)
+========================= */
+
+#paletteToggle,
+#paletteToggleMobile {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+#paletteControl { display: none; }
+
+.palette-control {
+  position: fixed;
+  top: 72px;
+  left: 8px;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.65);
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.palette-control button {
+  font-size: 12px;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #ffffff;
+  color: #111;
+}
+
+.palette-control button:hover {
+  background: #f0f0f0;
+}
+
+#paletteIndexOverlay {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  z-index: 10001;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  display: none;
+  pointer-events: none;
+}
+
+.tone-badge {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  padding: 2px 6px;
+  font-size: 11px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  border-radius: 3px;
+  pointer-events: none;
+  z-index: 5000;
+  display: none;
+}
+
+body.design-mode .tone-badge {
+  display: block;
+}
+
+/* Desktop: inline nav, no hamburger */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 26px;
+  line-height: 1;
+  padding: 4px 8px;
+  color: inherit; /* previously set to #0f2417; /* dark green */
+}
+
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 26px;
+  line-height: 1;
+  padding: 4px 8px;
+  color: inherit; /* follow header text color */
+}
+
+@media (max-width: 600px) {
+  .brand-tagline {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;            /* just under the sticky header */
+    right: 16px;
+    margin: 0;
+    padding: 8px 16px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    display: none;        /* hidden until .open is added */
+    flex-direction: column;
+    gap: 6px;
+    z-index: 9000;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a {
+    margin-left: 0;
+    padding: 4px 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-header .wrap {
+    gap: 8px;
+    min-height: 80px;   /* Tall navbar */
+  }
+
+  /* Hide round logo + text */
+  .brand-logo-main {
+    display: none;
+  }
+
+  .brand-text {
+    display: none;
+  }
+
+  /* SHOW curvy text — do NOT touch its size here */
+  .brand-logo-mobile {
+    display: block;
+  }
+
+  .brand {
+    gap: 0;
+    flex: 1;
+  }
+}
+
+
+/* =========================
+   Viewport debug overlay
+========================= */
+
+body.design-mode::after {
+  content: "vw " attr(data-vw)
+           " | vh " attr(data-vh)
+           " | dpr " attr(data-dpr)
+           " | screen " attr(data-sw) "x" attr(data-sh);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  z-index: 9999;
+  opacity: 0.85;
+}

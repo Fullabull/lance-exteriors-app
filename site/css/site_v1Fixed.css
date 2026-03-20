@@ -1,0 +1,138 @@
+/* warm-neutral v1 (canonical flex preserved) */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+
+  /* colors */
+  background: #fff2d5;
+  color: #1b1f1c;
+}
+
+.wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+
+  /* colors */
+  background: #fff7e6;
+  border-bottom: 1px solid #d8d2bf;
+}
+
+/* CANONICAL FLEX - DO NOT CHANGE */
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 56px;
+}
+
+.brand {
+  font-weight: 700;
+
+  /* colors */
+  color: #1f3a2b;
+}
+
+.nav a {
+  margin-left: 12px;
+  text-decoration: none;
+
+  /* colors */
+  color: #2f4f3a;
+}
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  padding: 56px 0;
+}
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: 36px;
+}
+.hero p {
+  margin: 0 0 16px;
+  max-width: 52ch;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  text-decoration: none;
+  margin-right: 10px;
+
+  /* colors */
+  border: 1px solid #2f4f3a;
+  color: #2f4f3a;
+  background: #ffffff80;
+}
+.btn-ghost {
+  /* colors */
+  border-color: #7f8a80;
+  color: #2f4f3a;
+  background: transparent;
+}
+
+.section {
+  padding: 40px 0;
+
+  /* colors */
+  border-top: 1px solid #e6dfc9;
+}
+.section.alt {
+  /* colors */
+  background: #fff7e6;
+}
+
+.cards {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.card {
+  padding: 14px;
+
+  /* colors */
+  border: 1px solid #d8d2bf;
+  background: #fff;
+}
+.card h3 {
+  margin: 0 0 6px;
+}
+
+.site-footer {
+  /* colors */
+  border-top: 1px solid #e6dfc9;
+  padding: 20px 0;
+}
+
+/* TEST MODE: simulate mobile width without DevTools  
+   Common CSS viewport widths:
+ * 320px – older/smaller phones (iPhone SE 1st gen, older Androids)
+ * 360px – very common Android baseline (still important)
+ * 375px – iPhone standard for years
+ * 390px – modern iPhones (12–15 non-Max)
+ *
+header, main, footer {
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+*/

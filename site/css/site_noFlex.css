@@ -1,0 +1,66 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  background: #FFF2D5;   /* your cream */
+  color: #1b1f1c;        /* softer than black */
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background: #FFF7E6;   /* warm header, not stark white */
+  border-bottom: 1px solid #d8d2bf;
+}
+
+.site-header .brand {
+  color: #1f3a2b;        /* your existing deep green */
+}
+
+.site-header .nav a {
+  color: #2f4f3a;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border: 1px solid #2f4f3a;  /* green border instead of black */
+  text-decoration: none;
+  color: #2f4f3a;
+  margin-right: 10px;
+  background: #ffffff80;      /* subtle lift without “coloring” */
+}
+
+.btn-ghost {
+  border-color: #7f8a80;
+  color: #2f4f3a;
+  background: transparent;
+}
+
+.section {
+  padding: 40px 0;
+  border-top: 1px solid #e6dfc9; /* warmer dividers */
+}
+
+.section.alt {
+  background: #FFF7E6; /* warm alt band */
+}
+
+.card {
+  border: 1px solid #d8d2bf;
+  padding: 14px;
+  background: #fff;
+}
+
+/* TEST MODE: simulate mobile width without DevTools  
+   Common CSS viewport widths:
+ * 320px – older/smaller phones (iPhone SE 1st gen, older Androids)
+ * 360px – very common Android baseline (still important)
+ * 375px – iPhone standard for years
+ * 390px – modern iPhones (12–15 non-Max)
+ *
+header, main, footer {
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+*/
